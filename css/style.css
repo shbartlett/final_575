@@ -1,0 +1,114 @@
+/* Stylesheet by SHB, 2019 */
+body { margin: 0; padding:2; }
+html,body,#map { height: 100%; width: 100%}
+button { padding: 5px 15px; border-radius: 5px; border: 1px solid black; background: linear-gradient(lightgoldenrodyellow, #DAA520);}
+button:hover { background: linear-gradient(#DAA520, lightgoldenrodyellow); }
+h5 { font-family: "Noto Sans", sans-serif; font-size: 25px; font-weight: bold; text-align: center; margin: 1;}
+h3 { font-family: "Noto Sans", sans-serif; font-size: .8em; font-weight: normal; text-align: center; margin: 0;}
+h2 {font-family: "Noto Sans", sans-serif; font-size: .85em; font-weight: normal; }
+h1 { font-family: "Noto Sans", sans-serif; font-size: 1.25em; font-weight: bold; text-align: left; margin: 0;}
+h4 { font-family: "Noto Sans", sans-serif; font-size: 1em; font-weight: bold; text-align: left; margin: 0;}
+
+#side-panel {
+  position: fixed;
+  left: 45px;
+  top: 30px;
+  width: 350px;
+  padding: 5px 20px;
+  background: rgba(256, 256, 256, 1);
+  border: 1px solid grey;
+  border-radius: 5px;
+  z-index: 1000;}
+p { font-size: .9em; line-height: 1.5em; }
+
+a { color: #005daa; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+body {
+font-family: sans-serif;
+}
+
+#wrapper {
+width: 960px;
+margin: 15px auto;
+}
+
+#map {
+height: 450px;
+margin: 15px auto;
+}
+
+#panel {
+    width: 26%;
+    align: left;
+    display: block;
+    text-align: center;
+    line-height: 42px;
+}
+
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 50px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+.range-slider {
+    width: 100%;
+}
+
+#forward {
+    float: right;
+}
+
+#reverse {
+    float: left;
+}
+
+.legend, .temporal-legend {
+  		padding: 6px 10px;
+    		font: 14px/16px Arial, Helvetica, sans-serif;
+   		background: white;
+    		background: rgba(255,255,255,0.8);
+    		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    		border-radius: 5px;
+	}
+	#legendTitle {
+  	  text-align: center;
+   	 	margin-bottom: 15px;
+   		font-variant: small-caps;
+	}
+	.symbolsContainer {
+    float: left;
+		margin-left: 50px;
+	}
+	.legendCircle {
+     	border-radius:50%;
+    	border: 1px solid #537898;
+     	background: rgba(113, 133, 152, .6);
+	 	  display: inline-block;
+	}
+	.legendValue {
+    		position: absolute;
+    		right: 8px;
+	}
+  .my-custom-control {
+      padding:5px 10px;
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      font-size: 11px;
+      line-height: 18px;
+      border-radius: 5px;
+  }
+
+  .my-custom-control:empty {
+      display: none;
+  }
