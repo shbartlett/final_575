@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
     <head>
     <meta charset="utf-8">
-    <title>Affordability Walkability in CO</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+    <title>Disasters in FEMA Region IV</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
@@ -29,55 +30,52 @@
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <link rel="stylesheet" src="css/style.css"/>
 
-    <style>
-        body { margin: 0; padding:2; }
-        html,body,#map { height: 100%; width: 100%}
-        button { padding: 5px 15px; border-radius: 5px; border: 1px solid black; background: linear-gradient(lightgoldenrodyellow, #DAA520);}
-        button:hover { background: linear-gradient(#DAA520, lightgoldenrodyellow); }
-        h5 { font-family: "Noto Sans", sans-serif; font-size: 25px; font-weight: bold; text-align: center; margin: 1;}
-        h3 { font-family: "Noto Sans", sans-serif; font-size: .8em; font-weight: normal; text-align: center; margin: 0;}
-        h2 {font-family: "Noto Sans", sans-serif; font-size: .85em; font-weight: normal; }
-        h1 { font-family: "Noto Sans", sans-serif; font-size: 1.25em; font-weight: bold; text-align: left; margin: 0;}
-        h4 { font-family: "Noto Sans", sans-serif; font-size: 1em; font-weight: bold; text-align: left; margin: 0;}
-
-        #side-panel {
-          position: fixed;
-          left: 45px;
-          top: 30px;
-          width: 350px;
-          padding: 5px 20px;
-          background: rgba(256, 256, 256, 1);
-          border: 1px solid grey;
-          border-radius: 5px;
-          z-index: 1000;}
-        p { font-size: .9em; line-height: 1.5em; }
-
-        a { color: #005daa; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-    </style>
     </head>
+
     <body>
         <header><output></output></header>
-        <section id="side-panel">
-            <h1>FEMA Declared Disasters</h1>
-            <h4></h4>
-            <h2>The Federal Emergency Management Agency (FEMA) allocates and deploys resources and assistance to communities in need after major disasters.</h2>
-            <h2>FEMA declared disasters categories contain both natural and man-made events including flooding, fire, and storms.</h2>
-            <h2>This visualization focuses on FEMA Region VI, which is an area of responsibility encompassing the Southeastern United States.</h2>
-            <h1>Walkability in Colorado</h1>
-            <h4></h4>
-            <h2>Walkability is a measure of how friendly an area is to walking. Walkability has health, environmental, and economic benefits. Factors influencing walkability include the presence or absence and quality of footpaths, sidewalks or other pedestrian rights-of-way, traffic and road conditions, land use patterns, building accessibility, and safety, among others.</h2>
-            <h2>Walk score data services are provided by the <a href="https://www.walkscore.com/professional/research.php">Walk Score Professional</a> web application.</h2>
-            <h3>Walkability ranges from 1(low) to 100(high)</h3>
-            <div></div>
-            <p>Website created by Dwight F., Stephanie B., &amp; Moe R.</p>
 
+        <section id="side-panel">
+            <h1>History of Disasters in FEMA Region IV, 1950 - 2019</h1>
+            <h4></h4>
+            <h2>The US Federal Emergency Management Agency (FEMA) allocates and deploys resources and assistance to communities in need after major disasters.</h2>
+            <h2>FEMA declared disasters categories contain both natural and man-made events including flooding, fire, and hurricanes.</h2>
+            <h2>This visualization focuses on the history of events in FEMA Region IV, which is an area of responsibility encompassing the Southeastern United States.</h2>
+            <h2>Declared disaster data available from <a href="https://www.fema.gov/openfema-dataset-disaster-declarations-summaries-v1">FEMA's open data initiative.</a></h2>
+            <div></div>
+            <h2>Project created by Dwight F., Stephanie B., &amp; Moe R. &#9400; 2019</h2>
         </section>
 
+        <div id="myMenu">
+  <div class="myWrapper">
+    <nav>
+    <img src="images/FEMA-logo.svg" width="200" />
+    </nav>
+  </div>
+</div>
         <div id="map"></div>
-        <script type="text/javascript" src="lib/script.js"></script>
+        <div class="legend">
+            <div class="legend-title">Multivariate Legend</div>
+            <div><span style="background: #08589E fill-opacity: 0.3"></span></div>
+            <div><span style="background: #08589E fill-opacity: 0.5"></span></div>
+            <div><span style="background: #08589E fill-opacity: 0.7"></span></div>
+            <div><span style="background: #08589E fill-opacity: 0.9"></span></div>
+            <div><span style="background: #2B8CBE fill-opacity: 0.3"></span></div>
+            <div><span style="background: #2B8CBE fill-opacity: 0.5"></span></div>
+            <div><span style="background: #2B8CBE fill-opacity: 0.7"></span></div>
+            <div><span style="background:  #2B8CBE fill-opacity: 0.9"></span></div>
+            <div><span style="background: #4EB3D3 fill-opacity: 0.3"></span></div>
+            <div><span style="background: #4EB3D3 fill-opacity: 0.7"></span></div>
+            <div><span style="background: #4EB3D3 fill-opacity: 0.5"></span></div>
+            <div><span style="background: #4EB3D3 fill-opacity: 0.9"></span></div>
+            <div><span style="background: #7BCCC4 fill-opacity: 0.3"></span></div>
+            <div><span style="background: #7BCCC4 fill-opacity: 0.5"></span></div>
+            <div><span style="background: #7BCCC4 fill-opacity: 0.7"></span></div>
+            <div><span style="background: #7BCCC4 fill-opacity: 0.9"></span></div>
+        </div>-->
+        <script type="text/javascript" src="js/main.js"></script>
         <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     </body>
 </html>
